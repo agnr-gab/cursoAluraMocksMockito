@@ -22,11 +22,14 @@ class FinalizarLeilaoServiceTest {
 	
 	@Mock
 	private LeilaoDao leilaoDao;
+
+	@Mock
+	private EnviadorDeEmails enviadorDeEmails;
 	
 	@BeforeEach
 	public void beforeEach() {
 		MockitoAnnotations.initMocks(this);
-		this.service = new FinalizarLeilaoService(leilaoDao);
+		this.service = new FinalizarLeilaoService(leilaoDao, enviadorDeEmails);
 	}
 
 	@Test
